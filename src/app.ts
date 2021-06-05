@@ -11,7 +11,8 @@ app.use(cors())
 app.use(express.json())
 
 app.use("/api/v1/restaurant", restaurant)
-app.use("/api/v1/restaurant/auth", auth)
+app.use("/api/v1/auth", auth)
+app.use("/", (req, res) => res.status(200).json({ message: "Welcome to Reservation Resto API V1" }))
 app.use("*", (req, res) => res.status(404).json({ error: "Not Found" }))
 
 export default app

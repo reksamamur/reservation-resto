@@ -5,6 +5,7 @@ export interface UsersInterface extends Document {
     email: string,
     password: string,
     name: string,
+    phone: string,
     level: number
 }
 
@@ -20,6 +21,10 @@ const UsersSchema: Schema = new Schema({
         require: true
     },
     name: {
+        type: String,
+        require: true
+    },
+    phone: {
         type: String,
         require: true
     },
